@@ -44,3 +44,15 @@ class EasyArrayTest(unittest.TestCase):
         nums = [1, 2, 3, 4, 5]
         self.ea.rotate_array(nums, 21)
         self.assertEqual(nums, [5, 1, 2, 3, 4])
+
+    def test_contains_duplicate_false(self):
+        nums = [1, 2, 3]
+        self.assertFalse(self.ea.contains_duplicate(nums))
+
+    def test_contains_duplicate_true(self):
+        nums = [1, 1, 2]
+        self.assertTrue(self.ea.contains_duplicate(nums))
+
+    def test_contains_duplicate_empty(self):
+        nums = []
+        self.assertFalse(self.ea.contains_duplicate(nums))

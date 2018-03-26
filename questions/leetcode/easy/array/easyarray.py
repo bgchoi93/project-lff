@@ -47,3 +47,15 @@ class EasyArray(object):
 
         for i in range(0, len(nums)):
             nums[i] = l[i]
+
+    # Problem : Contains Duplicate
+    # Time Complexity : O(n)
+    # Space Complexity : O(n)
+    def contains_duplicate(self, nums):
+        s = set()
+        for i in nums:
+            if i in s:
+                return True
+            else:
+                s.add(i)
+        return False
