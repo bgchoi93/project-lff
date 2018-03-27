@@ -59,3 +59,33 @@ class EasyArray(object):
             else:
                 s.add(i)
         return False
+
+    # Problem : Single Number
+    # Time Complexity : O(n)
+    # Space Complexity : O(n)
+    def single_number_set(self, nums):
+        num_set = set()
+        for i in nums:
+            if i in num_set:
+                num_set.remove(i)
+            else:
+                num_set.add(i)
+        return num_set.pop()
+
+    # Problem : Single Number
+    # Time Complexity : O(n log n)
+    # Space Complexity : O(1)
+    def single_number_sort(self, nums):
+        nums.sort()
+        for i in range(0, len(nums), 2):
+            if (i + 1 == len(nums)) or (nums[i] != nums[i + 1]):
+                return nums[i]
+
+    # Problem : Single Number
+    # Time Complexity : O(n)
+    # Space Complexity : O(1)
+    def single_number_bit(self, nums):
+        xor = 0
+        for i in nums:
+            xor = xor ^ i
+        return xor

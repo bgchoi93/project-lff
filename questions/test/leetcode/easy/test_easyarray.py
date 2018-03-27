@@ -56,3 +56,15 @@ class EasyArrayTest(unittest.TestCase):
     def test_contains_duplicate_empty(self):
         nums = []
         self.assertFalse(self.ea.contains_duplicate(nums))
+
+    def test_single_number_set(self):
+        nums = [1, 2, 2, 3, 1]
+        self.assertEqual(self.ea.single_number_set(nums), 3)
+
+    def test_single_number_sort(self):
+        nums = [1, 2, 2, 3, 1]
+        self.assertEqual(self.ea.single_number_sort(nums), 3)
+
+    def test_single_number_bit(self):
+        nums = [1, 2, 2, 3, 1]
+        self.assertEqual(self.ea.single_number_bit(nums), 3)
