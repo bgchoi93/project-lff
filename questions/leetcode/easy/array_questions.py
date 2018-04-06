@@ -1,4 +1,4 @@
-class EasyArray():
+class ArrayQuestions():
 
     # Problem : Remove Duplicates from Sorted Array
     # Time Complexity : O(n)
