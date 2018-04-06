@@ -1,4 +1,4 @@
-class EasyArray(object):
+class EasyArray():
 
     # Problem : Remove Duplicates from Sorted Array
     # Time Complexity : O(n)
@@ -89,3 +89,38 @@ class EasyArray(object):
         for i in nums:
             xor = xor ^ i
         return xor
+
+    # Problem : Move Zeroes (283)
+    # * In-place
+    # * Minimize total number of operations
+    # Time Complexity : O(n^2)
+    # Space Complexity : O(1)
+    def move_zeroes_brute_force(self, nums):
+        i = 0
+        j = 1
+        while (i < len(nums) and j < len(nums)):
+            if (nums[i] == 0) and (nums[j] != 0):
+                temp = nums[i]
+                nums[i] = nums[j]
+                nums[j] = temp
+                i += 1
+                j = i + 1
+            elif (nums[i] == 0) and (nums[j] == 0):
+                j += 1
+            else:
+                i += 1
+                j += 1
+
+    # Problem : Move Zeroes (283)
+    # * In-place
+    # * Minimize total number of operations
+    # Time Complexity : O(n)
+    # Space Complexity : O(1)
+    def move_zeroes(self, nums):
+        zero_index = 0
+        for i in nums:
+            if (i != 0):
+                nums[zero_index] = i
+                zero_index += 1
+        for i in range(zero_index, len(nums)):
+            nums[i] = 0

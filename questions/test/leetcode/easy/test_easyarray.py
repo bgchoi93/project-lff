@@ -68,3 +68,8 @@ class EasyArrayTest(unittest.TestCase):
     def test_single_number_bit(self):
         nums = [1, 2, 2, 3, 1]
         self.assertEqual(self.ea.single_number_bit(nums), 3)
+
+    def test_move_zeroes(self):
+        nums = [1, 0, 1, 0, 3, 12]
+        self.ea.move_zeroes(nums)
+        self.assertEqual(nums, [1, 1, 3, 12, 0, 0])
